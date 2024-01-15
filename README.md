@@ -2,7 +2,7 @@ You need Docker installed on your system to run this application running.
 ## Running the app
 Just execute 
 
-docker comose up --build
+docker compose up --build
 
 and you're good to go.
 
