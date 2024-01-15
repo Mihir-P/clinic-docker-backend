@@ -1,29 +1,11 @@
-## Installation
-
-```bash
-$ npm install
-```
-
-## Set the Database credentials in .env file
-Set 
-POSTGRES_HOST=<your_host>
-POSTGRES_PORT=<postgres_port>
-POSTGRES_USER=<pg_user>
-POSTGRES_PASSWORD=<pg_password>
-POSTGRES_DATABASE=<db_name>
-
+You need Docker installed on your system to run this application running.
 ## Running the app
+Just execute 
 
-```bash
-# development
-$ npm run start
+docker comose up --build
 
-# watch mode
-$ npm run start:dev
+and you're good to go.
 
-# production mode
-$ npm run start:prod
-```
-This should get the application running on PORT mentioned in env file
+This should get the application running on PORT 3000
 
 You can Find the Sample APIs request and responses in samples.md
