@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Slot } from './entities/appointment.entity';
-import { slots } from 'src/seeder/data';
+import { slots } from '../seeder/data';
 
 @Injectable()
 export class SlotSeederService {

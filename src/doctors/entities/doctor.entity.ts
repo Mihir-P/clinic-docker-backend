@@ -1,4 +1,4 @@
-import { Appointment, DoctorAvailability } from 'src/appointment/entities/appointment.entity';
+import { Appointment, DoctorAvailability } from '../../appointment/entities/appointment.entity';
 import { Entity, Column, PrimaryColumn, OneToMany } from 'typeorm';
 
 @Entity('doctors')
@@ -12,10 +12,10 @@ export class Doctor {
     @Column({nullable: true})
     department : string;
 
-    @Column()
+    @Column({unique: true})
     phoneNumber : string;
 
-    @Column()
+    @Column({unique: true})
     email : string;
 
     @Column()

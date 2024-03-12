@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Put, BadRequestException } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Put, BadRequestException, InternalServerErrorException } from '@nestjs/common';
 import { PatientService } from './patient.service';
 import { CreatePatientDto } from './dto/create-patient.dto';
 import { UpdatePatientDto } from './dto/update-patient.dto';
@@ -11,7 +11,10 @@ export class PatientController {
   @Post()
   @Header('Cache-Control', 'none')
   async create(@Body() createPatientDto: CreatePatientDto) {
-    return await this.patientService.create(createPatientDto);
+    const res = await this.patientService.create(createPatientDto);
+    if(res === 'Patient already exists') throw new BadRequestException('Patient with same phonennumber already exists');
+    else if(res instanceof Error) throw new InternalServerErrorException('Something went wrong');
+    return res;
   }
 
   @Get()

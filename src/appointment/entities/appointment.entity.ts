@@ -1,5 +1,5 @@
-import { Doctor } from 'src/doctors/entities/doctor.entity';
-import { Patient } from 'src/patient/entities/patient.entity';
+import { Doctor } from '../../doctors/entities/doctor.entity';
+import { Patient } from '../../patient/entities/patient.entity';
 import { Entity, Column, PrimaryColumn, ManyToOne, PrimaryGeneratedColumn, OneToMany, JoinColumn } from 'typeorm';
 
 @Entity('appointment_slots')
@@ -14,11 +14,11 @@ export class Slot {
     @Column()
     displayName: string;
 
-    @Column({ type: 'time' })
-    startTime: String;
+    @Column({type: 'bigint'})
+    startTime: string;
 
-    @Column({ type: 'time' })
-    endTime: String;
+    @Column({type: 'bigint'})
+    endTime: string;
 
     @OneToMany(() => DoctorAvailability, (availability) => availability.slot, {nullable: true})
     availabilities: DoctorAvailability[];

@@ -1,4 +1,4 @@
-import { Appointment } from 'src/appointment/entities/appointment.entity';
+import { Appointment } from '../../appointment/entities/appointment.entity';
 import { Entity, Column, PrimaryColumn, OneToMany } from 'typeorm';
 
 @Entity('patients')
@@ -12,7 +12,7 @@ export class Patient {
     @Column({nullable: true, type: 'date'})
     dateOfBirth : Date;
 
-    @Column()
+    @Column({unique: true})
     phoneNumber : String;
 
     @Column()

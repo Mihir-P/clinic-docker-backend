@@ -22,7 +22,16 @@ export class PatientService {
     patient.email = createPatientDto.email;
     patient.createdAt = new Date();
     patient.updatedAt = new Date();
-    return await this.patientRepository.save(patient);
+    try {
+      return await this.patientRepository.save(patient);
+    } catch (error) {
+      console.log(error);
+      if(error.toString().startsWith('QueryFailedError: duplicate key value violates unique constraint')) {
+        return 'Patient already exists';
+      }
+      return error;
+    }
+    
   }
 
   async findAll() {

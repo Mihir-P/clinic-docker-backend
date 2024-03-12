@@ -6,8 +6,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Appointment, Slot, DoctorAvailability } from './entities/appointment.entity';
 import { Repository } from 'typeorm';
 import { AddAvailabilityDto } from './dto/add-availability-dto';
-import { Doctor } from 'src/doctors/entities/doctor.entity';
-import { Patient } from 'src/patient/entities/patient.entity';
+import { Doctor } from '../doctors/entities/doctor.entity';
+import { Patient } from '../patient/entities/patient.entity';
 
 @Injectable()
 export class AppointmentService {

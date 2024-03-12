@@ -1,6 +1,5 @@
-import { Doctor } from 'src/doctors/entities/doctor.entity';
-import { Patient } from 'src/patient/entities/patient.entity';
-import { Slot } from '../entities/appointment.entity';
+import { Patient } from '../../patient/entities/patient.entity';
+import { Slot } from '../../appointment/entities/appointment.entity';
 
 export class CreateAppointmentDto {
     id: String;

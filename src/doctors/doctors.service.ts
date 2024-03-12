@@ -21,7 +21,15 @@ export class DoctorsService {
     doctor.email = createDoctorDto.email;
     doctor.createdAt = new Date();
     doctor.updatedAt = new Date();
-    return await this.doctorRepository.save(doctor);
+    try {
+      return await this.doctorRepository.save(doctor);;
+    } catch (error) {
+      console.log(error);
+      if(error.toString().startsWith('QueryFailedError: duplicate key value violates unique constraint')) {
+        return 'Doctor already exists';
+      }
+      return error;
+    }
   }
 
   async findAll() {
