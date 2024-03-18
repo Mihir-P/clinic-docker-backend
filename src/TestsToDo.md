@@ -10,11 +10,11 @@ No Duplicate DONE
 
 Doctor
 To be Defined DONE
-C 
-R
-U
-D
-No Duplicate
+C DONE
+R DONE
+U DONE
+D DONE
+No Duplicate DONE
 
 Appointment
 
@@ -22,7 +22,7 @@ API ------- Check time occupied based on time < > instead of Slot, since that ca
 API ------- Cannot be cancelled by Patient/Doctor 30 mins prior to the appointment
 
 Tests:
-To be Defined
+To be Defined DONE
 No Duplicate Availabilities
 Available Slots should be correct
 Create

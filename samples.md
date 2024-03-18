@@ -102,10 +102,8 @@
     Sample Request:
         {
             "name": "Dr. Newton",
-            "dateOfBirth": "2000-07-05",
             "phoneNumber": "7038258118",
             "email": "abc@xyz.com",
-            "available": false,
             "department": "specific"
         }
     
